@@ -12,8 +12,8 @@ class: center, middle, ircam, inverse
 
 <img src="https://www.ircam.fr/media/uploads/images/logo/logoircam_blanc.png" height="40px" />
 <img src="img/wam_logo_1.png" height="40px" />
-<img src="https://github.com/Parisson/Telemeta-doc/blob/master/Common/img/parisson_logo_4_black_72_600px.png?raw=true" height="40px" />
 <img src="img/telemeta_logo_wh.png" height="40px" />
+<img src="https://github.com/Parisson/Telemeta-doc/blob/master/Common/img/parisson_logo_4_black_72_600px.png?raw=true" height="40px" />
 <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/8/8e/Centre_national_de_la_recherche_scientifique.svg/1200px-Centre_national_de_la_recherche_scientifique.svg.png" height="40px" />
 <img src="https://www.sorbonne-universite.fr/sites/default/files/media/2019-10/logo_4.svg" height="40px" />
 <img src="https://anr.fr/typo3conf/ext/anr_skin/Resources/Public/assets/img/anr-logo-2021.png" height="40px" />
@@ -41,24 +41,23 @@ class: ircam, tight
 
 ## Context
 
-- digization > big data > platforms > machine learning > users & listeners
-- more data sets, databases, formats, algorithm versions, open DSP libraries & communities
-- difficulties to port and scale some algorithms on production platforms (DSP at scale)
-- computer science need human data, digital humanities needs computers
-- collaborative workflows, citizen sciences through the web
+- **digization** > big data > platforms > algorithms > **listeners**
+- more **data sets**, databases, formats, algorithm versions, open DSP libraries & **communities**
+- difficulties to **port and scale some algorithms** on production platforms (DSP at scale)
+- **computer science** needs human data, **digital humanities** need computers
+- **collaborative workflows, citizen sciences** through the web
+- **temporal description** of sound and musical events
 
 .pull-left[
 
 ## Constraints
 
-- continuous development, continuous integration
-- reproducible research
 - sustainable digital archiving
-- copyrighted data
-- open source and standards
-- format evolution and abstraction
-- duplicate and version everything
-- access everywhere
+- reproducible research
+- copyrights, dissemination
+- open source, open standards, Web, format evolution and abstraction
+- continuous development, continuous integration
+- version everything, access everywhere
 
 ]
 
@@ -66,7 +65,7 @@ class: ircam, tight
 
 ### Use cases
 
-- MIRchiving
+- MIR + archiving = MIRchiving
 - digitization and media packaging services
 - metadata enhanced streaming services
 - music data based applications
@@ -83,7 +82,7 @@ class: ircam
 
 - 2007 : [Telemeta](https://telemeta.org) developed for the sound archives of the CNRS / Musée de l'Homme
 - 2010 : TimeSide separation as a autonomous library and then a framework with a plugin oriented architecture
-- 2011 : Telemeta v1.0 released and http://archives.crem-cnrs.fr/
+- 2011 : Telemeta v1.0 released and https://archives.crem-cnrs.fr
 - 2013 : DIADEMS project (ANR) : external plugins
 - 2015 : TimeSide server and RESTFul API prototypes
 - 2015 : KAMoulox (ANR), DaCaRyh (Labex) projects
@@ -157,7 +156,7 @@ https://github.com/Ircam-WAM/TimeSide
 
 * **Process** audio fast and asynchronous with **Python**,
 * **Decode** audio frames from *any* audio or video media format into **Numpy arrays**,
-* **Analyze** audio content with some **state-of-the-art** audio feature extraction libraries like **Aubio, Essentia, Librosa, Yaafe, VAMP** and pure python processors
+* **Analyze** audio content with some **state-of-the-art** audio feature extraction libraries like **Librosa, Aubio, Essentia, Yaafe, VAMP, IRCAM descriptors** and pure python processors
 * **Visualize** audio data with various fancy waveforms, spectrograms and other cool graphers,
 * **Transcode** audio data in various media formats and stream them through web apps,
 * **Serialize** feature analysis data through various portable formats (XML, JSON, HDF5)
@@ -737,8 +736,8 @@ class: ircam, tight
 - Web Animations API
 - Websockets
 - Resize Observer
-- Github Action for continuous test & deployment (npm, gh-page)
-- Github: https://github.com/Ircam-WAM/timeside-player
+- GitHub Action for continuous test & deployment (npm, gh-page)
+- https://github.com/Ircam-WAM/timeside-player
 
 ]
 
@@ -853,13 +852,15 @@ class: ircam, tight
 
 ### TODO list
 
-- Clustering and orchestration (Kubernetes, prototype ready)
-- Implementing ServerEvent or Webhook to avoid task status polling
-- Vertical scales
-- More plugins (VAMP host, source separation)
-- Split repositories : core / server
-- Test some JS MIR librairies (Essentia.js)
-- More DOCUMENTATION, notebooks and tests
+- vertical scales
+- clustering and orchestration
+- synchronous task status polling
+- more plugins (VAMP host, source separation)
+- test some JS MIR librairies (Essentia.js)
+- easy upload
+- audio cross comparison functions
+- more embed experiences
+- re-use of archives in contemporary music
 
 ]
 
@@ -873,8 +874,9 @@ class: ircam, tight
 ### New partnerships
 
 - IRCAM Amplify
-- BNF?
-- more CNRS?
+- BNF ?
+- +CNRS ?
+- LISA ?
 
 ]
 
@@ -894,8 +896,8 @@ class: center, middle, ircam, inverse
 
 <img src="https://www.ircam.fr/media/uploads/images/logo/logoircam_blanc.png" height="40px" />
 <img src="img/wam_logo_1.png" height="40px" />
-<img src="https://github.com/Parisson/Telemeta-doc/blob/master/Common/img/parisson_logo_4_black_72_600px.png?raw=true" height="40px" />
 <img src="img/telemeta_logo_wh.png" height="40px" />
+<img src="https://github.com/Parisson/Telemeta-doc/blob/master/Common/img/parisson_logo_4_black_72_600px.png?raw=true" height="40px" />
 <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/8/8e/Centre_national_de_la_recherche_scientifique.svg/1200px-Centre_national_de_la_recherche_scientifique.svg.png" height="40px" />
 <img src="https://www.sorbonne-universite.fr/sites/default/files/media/2019-10/logo_4.svg" height="40px" />
 <img src="https://anr.fr/typo3conf/ext/anr_skin/Resources/Public/assets/img/anr-logo-2021.png" height="40px" />
