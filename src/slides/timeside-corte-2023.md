@@ -767,8 +767,11 @@ class: ircam, tight
 
 <br>
 
-<iframe src="https://ircam-wam.github.io/timeside-player/#/item/9e001ba0-6826-4f13-8679-21b1037c34e3" frameborder="0" style="width: 100%; height: 300px;">
+<!-- <iframe src="https://ircam-wam.github.io/timeside-player/#/item/9e001ba0-6826-4f13-8679-21b1037c34e3" frameborder="0" style="width: 100%; height: 300px;">
 </iframe>
+ -->
+<img src="img/timeside-player-simple-embed.png" width="100%">
+
 
 
 ---
