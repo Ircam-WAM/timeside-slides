@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Telemeta 2.0</title>
+    <title>TimeSide</title>
     <meta name="description" content="Some description about the slides">
     <meta name="author" content="You">
     <link rel="stylesheet" href="css/main.css">
@@ -14,64 +14,93 @@
 
 # TimeSide
 
-##Python audio processing framework and server made for the web
+## un framework, un web service et un player open source <br> d’analyse et d’annotation sonore
 
-###Guillaume Pellerin, Antoine Grandry, Martin Desrumaux - POW - IRCAM
+<br>
 
-#### Séminaire STMS - 14/10/2020 - IRCAM
+### Guillaume Pellerin, WAM team, Dpt Innovation et Moyens de la Recherche, IRCAM, Paris
 
-<img src="img/POW_MB.png" height="100px" />
+#### Séminaire Archives Sonores et humanités numériques - 04/05/2023 - Corte, France
+
+<img src="https://www.ircam.fr/media/uploads/images/logo/logoircam_blanc.png" height="40px" />
+<img src="img/wam_logo_1.png" height="40px" />
+<img src="img/telemeta_logo_wh.png" height="40px" />
+<img src="https://github.com/Parisson/Telemeta-doc/blob/master/Common/img/parisson_logo_4_black_72_600px.png?raw=true" height="40px" />
+<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/8/8e/Centre_national_de_la_recherche_scientifique.svg/1200px-Centre_national_de_la_recherche_scientifique.svg.png" height="40px" />
+<img src="https://www.sorbonne-universite.fr/sites/default/files/media/2019-10/logo_4.svg" height="40px" />
+<img src="https://anr.fr/typo3conf/ext/anr_skin/Resources/Public/assets/img/anr-logo-2021.png" height="40px" />
+<img src="https://www.culture.gouv.fr/var/culture/storage/images/_aliases/reference/7/3/0/4/3164037-1-fre-FR/LogoMCHP.PNG" height="40px" />
+
+<!-- Paul Brossier, <br> Antoine Grandry, Martin Desrumaux, Guillaume Piccarreta -->
 
 ---
-class: ircam
+class: ircam, large-list
 
-#Outline
+# Outline
 
-- Intro (GP 2mn)
-- History (GP 5mn)
-- Core (GP 10mn)
-- Server (AG 10mn)
-- Player v2 (MD 10mn)
-- Perspectives (GP 3mn)
+- Introduction
+- History
+- Core
+- Server
+- Player
+- Perspectives
 
 
 ---
 class: ircam, tight
 
-#TimeSide
+# TimeSide
 
 ## Context
 
-- digization > big data > platforms > machine learning > users & listeners
-- more data sets, databases, formats, algorithm versions, open DSP libraries & communities
-- collaborative workflows, citizen sciences through the web
+- **digization** > big data > platforms > algorithms > **listeners**
+- more **data sets**, databases, formats, algorithm versions, open DSP libraries & **communities**
+- difficulties to **port and scale some algorithms** on production platforms (DSP at scale)
+- **computer science** needs human data, **digital humanities** need computers
+- **collaborative workflows, citizen sciences** through the web
+- **temporal description** of sound and musical events
 
-## Problems, needs and usecases
+.pull-left[
 
-- computer science need human data, digital humanities needs computers
-- difficult to port and scale some algorithms on streaming platforms (DSP at scale)
-- copyrighted data
-- reproducible research
+## Constraints
+
 - sustainable digital archiving
-- open source and standards
-- format evolution and abstraction
-- duplicate and version everything
-- access everywhere
+- reproducible research
+- copyrights, dissemination
+- open source, open standards, Web, format evolution and abstraction
+- continuous development, continuous integration
+- version everything, access everywhere
+
+]
+
+.pull-right[
+
+### Use cases
+
+- MIR + archiving = MIRchiving
+- digitization and media packaging services
+- metadata enhanced streaming services
+- music data based applications
+- machine learning based applications
+
+]
 
 ---
 class: ircam
 
-#TimeSide
+# TimeSide
 
-##History
+## History
 
 - 2007 : [Telemeta](https://telemeta.org) developed for the sound archives of the CNRS / Musée de l'Homme
 - 2010 : TimeSide separation as a autonomous library and then a framework with a plugin oriented architecture
-- 2011 : Telemeta v1.0 released and http://archives.crem-cnrs.fr/
-- 2013 : DIADEMS project (ANR) : Processor API, external plugins
-- 2015 : TimeSide API and server prototype
-- 2015 : KAMoulox, DaCaRyh projects (ANR)
-- 2016 : WASABI (ANR), CREM-NYU-Parisson (Arabic rythm analysis)
+- 2011 : Telemeta v1.0 released and https://archives.crem-cnrs.fr
+- 2013 : DIADEMS project (ANR) : external plugins
+- 2015 : TimeSide server and RESTFul API prototypes
+- 2015 : KAMoulox (ANR), DaCaRyh (Labex) projects
+- 2016 : WASABI (ANR), CREM-NYU-Parisson projects
+- 2019-2023 : Fully embed into IRCAM WAM innovation team
+
 
 ---
 class: ircam
@@ -80,7 +109,7 @@ class: ircam
 
 <center><img src="img/telemeta_english.png" width="80%"></center>
 
-.center[http://archives.crem-cnrs.fr/]
+.center[https://archives.crem-cnrs.fr]
 
 ---
 class: ircam
@@ -89,12 +118,12 @@ class: ircam
 
 <center><img src="img/telemeta_geo.png" width="80%"></center>
 
-
 ---
 class: ircam, tight
 #Telemeta / TimeSide integration
 
 .pull-left[
+
 <img src="img/telemeta_logo.png" height="100px" />
 
 ###Collaborative multimedia asset management system
@@ -121,64 +150,9 @@ https://github.com/Parisson/Telemeta
 
 
 ---
-class: ircam, tight
-
-#WASABI project
-
-##Web Audio and SemAntics in the Browser for Indexation
-
-- 42 months from 2016 Q4 to april 2020 Q4
-- 750 k€ project granted by the french Research National Agency
-
-## Consortium
-
-- INRIA (I3S)
-- IRCAM (APM, AnaSyn, POW)
-- Deezer R&D
-- Radio France
-- Parisson
-
-
----
-class: ircam
-
-#WASABI project
-
-##Objectives
-
-- Propose some new methodologies to index music in the web and audio contexts
-- Link semantics (linked metadata) + acoustics (MIR data) + machine learning
-- Develop and publish some open source web services through original APIs
-
-##Use cases
-
-- enhanced web music browsing
-- data journalism
-- music composing through big data (schools)
-- desambiguisation
-- lyrics synchronization
-
----
-class: ircam
-# WASABI platform ([link](https://wasabi.i3s.unice.fr/))
-
-.pic-container[
-    <img src="img/wasabi.i3s.unice.fr-ledzep-1.png" width="100%">
-]
-
----
-class: ircam
-# WASABI platform
-
-.pic-container[
-    <img src="img/Architecture_WASABI.png" width="80%">
-]
-
-
----
 class: center, middle, ircam, inverse
 
-# TimeSide Core
+# timeside.core
 
 
 ---
@@ -188,13 +162,13 @@ class: ircam, tight
 
 ## Python audio processing framework and server made for the web
 
-https://github.com/Parisson/TimeSide
+https://github.com/Ircam-WAM/TimeSide
 
 ##Goals
 
 * **Process** audio fast and asynchronous with **Python**,
 * **Decode** audio frames from *any* audio or video media format into **Numpy arrays**,
-* **Analyze** audio content with some **state-of-the-art** audio feature extraction libraries like **Aubio, Essentia, Librosa, Yaafe, VAMP** and pure python processors
+* **Analyze** audio content with some **state-of-the-art** audio feature extraction libraries like **Librosa, Aubio, Essentia, Yaafe, VAMP, IRCAM descriptors** and pure python processors
 * **Visualize** audio data with various fancy waveforms, spectrograms and other cool graphers,
 * **Transcode** audio data in various media formats and stream them through web apps,
 * **Serialize** feature analysis data through various portable formats (XML, JSON, HDF5)
@@ -210,9 +184,9 @@ class: ircam
 
 ##Python audio processing framework and server made for the web
 
-https://github.com/Parisson/TimeSide
+https://github.com/Ircam-WAM/TimeSide
 
-##Use cases
+## Use cases
 
 - Scaled audio processing (filtering, transcoding, machine learning, etc...)
 - Audio process prototyping
@@ -221,7 +195,7 @@ https://github.com/Parisson/TimeSide
 - Collaborative annotation
 - Audio web services
 
-##License AGPL v2
+## License: AGPL v2
 
 ---
 class: ircam
@@ -313,8 +287,8 @@ class: ircam
 - processing API
 - plugin architecture
 - namespace
-- docker packaged
 - ~500 unit tests
+- docker packaged (Linux, OSX, Windows)
 ]
 
 .pull-right-70[
@@ -338,15 +312,18 @@ Level: {'level.max': AnalyzerResult(...), 'level.rms': AnalyzerResult(...)}
 ```
 
 ```bash
-$ git clone --recursive https://github.com/Parisson/TimeSide.git
+$ git clone --recursive https://github.com/Ircam-WAM/TimeSide.git
+$ docker-compose run app python3 manage.py shell
 $ docker-compose up
 ```
+
+https://timeside.readthedocs.io/en/latest/index.html
 
 ]
 
 
 ---
-class: ircam, tight
+class: ircam
 
 # timeside.core
 
@@ -361,6 +338,7 @@ class: ircam, tight
 - librosa (function oriented)
 - VampPyHost
 - Essentia bridge
+- ...
 ]
 
 .pull-right[
@@ -370,7 +348,6 @@ class: ircam, tight
 - Monophony / Polyphony
 - Dissonance
 - Timbre Toolbox
-- etc... (experimental)
 
 https://github.com/DIADEMS/timeside-diadems
 
@@ -378,27 +355,42 @@ https://github.com/DIADEMS/timeside-diadems
 
 
 ---
-class: ircam, tight
+class: ircam
 
 # timeside.core
 
-## What's new?
+## Roadmaps
 
-0.9.4 > 1.0.0a (released yesterday!): 674 commits, 7 contributors
+### 0.9 > 1.0 (2019-2021)
 
+* 674 commits, 7 contributors
 * Python 2.7 to 3.7
 * Drop GStreamer for Aubio as default decoder and encoder
-* Regroup all dependencies on pip requirements, drop conda
+* Regroup all dependencies on pip requirements, drop Conda
 * Add `Provider` object
 * Add Provider plugins `deezer-preview`, `deezer-complete` and `youtube`
 * Add loggers
-* Improve Docker packaging
+* Improve Docker packaging and image building
+
+---
+class: ircam
+
+# timeside.core
+
+## Roadmaps
+
+### 1.0 > 1.1 (2021 - 2023)
+
+
+- Use the libav based aubio decoder by default (fastest audio to numpy array converter on the planet!)
+- Add a VAMP based Analyzer and a few plugins like `VampFlatness`, `VampCrest`, `VampTempo`, `VampTuning`, `VampSpectralCentroid`, `VampSpectralKurtosis` and `VampSpectralSlope`
+- Updated documentation https://timeside.ircam.fr/docs/
+
 
 ---
 class: ircam, middle, center, inverse
 
-#TimeSide Server
-
+# timeside.server
 
 ---
 class: ircam, tight
@@ -406,43 +398,19 @@ class: ircam, tight
 
 .pull-left[
 ## RESTful API built on TimeSide
-https://sandbox.wasabi.telemeta.org/timeside/api/
-
-### What's New on Server?
-- Based on Django REST Framework
-- Interoperability: allows other servers or frontends to interact with the TimeSide instance and its data
-- Relational PostgreSQL database in order to store music tracks and processing results
-- Models: essential fields and behaviors of stored data
-- JWT authentication
-- OpenAPI specification
-- SDK built on the API available in TypeScript
-- queue-worker architecture enables to run tasks asynchronously
-
-]
-
-.pull-right[
-<img src="img/server_api.png" width="520">
-]
-
----
-class: ircam, tight
-#timeside.server
-
-.pull-left[
-## RESTful API built on TimeSide
-https://sandbox.wasabi.telemeta.org/timeside/api/
+👉 https://timeside.ircam.fr/api/
 
 ### Use cases
-- Upload audio tracks
-- Retrieve audio tracks from remote providers
-- Stream original or transcoded sources
-- Run on-demand analysis
-- Customize processors parameters
-- Collect track's annotation to build audio corpora
-- Deliver and share several types of results:
+- **Upload** audio tracks
+- **Retrieve** audio tracks from remote providers
+- **Stream** original or transcoded sources
+- **Run** on-demand analysis
+- **Customize** processors parameters
+- **Collect** track's annotation to build audio corpora
+- **Deliver** and share several types of results:
     - transcoded audio
     - serialized analysis as JSON or image
-- Export/import an audio analysis dataset
+- **Export/import** an audio analysis dataset
 ]
 
 .pull-right[
@@ -455,7 +423,56 @@ class: ircam, tight
 
 .pull-left[
 ## RESTful API built on TimeSide
-https://sandbox.wasabi.telemeta.org/timeside/api/
+👉 https://timeside.ircam.fr/api/
+
+### Server design
+- Based on Django REST Framework (DRF)
+- **Interoperability** between other servers or frontends and TimeSide instance and its data
+- Object-relational **database** in order to store music tracks and processing results
+- **Models**: define essential fields and behaviors of stored data
+- **queue-worker architecture** enables to run tasks asynchronously
+
+]
+
+.pull-right[
+<img src="img/server_api.png" width="520">
+]
+
+---
+class: ircam, tight
+
+# timeside.server
+
+.pull-left[
+## RESTful API built on TimeSide
+👉 https://timeside.ircam.fr/api/
+
+### What's new on server?
+- Add audio providers (Deezer, Youtube)
+- Switch from MySQL to PostgreSQL
+- Add a JWT authentication
+- Make the API follow the OpenAPI specification
+- Build a TypeScript SDK on the REST API
+- Add several tools, views, models and serializers
+- Improve server unit testing
+- Fix few bugs
+- Python, Django, DRF and Celery upgrades
+
+]
+
+.pull-right[
+<img src="img/server_api.png" width="520">
+]
+
+
+---
+class: ircam, tight
+
+# timeside.server
+
+.pull-left[
+## RESTful API built on TimeSide
+👉 👉 https://timeside.ircam.fr/api/
 
 ### Models
 
@@ -464,7 +481,7 @@ https://sandbox.wasabi.telemeta.org/timeside/api/
 - `Selection`: list of items (corpus)
 - `Processor`: plugins with version and default parameters
 - `Preset`: processor and a set of parameters
-- `Experience`: list of presets forming a pipe
+- `Experience`: list of presets forming a pipe (reproductible)
 - `Task`: an experience and a selection
 - `Result`: transcoded audio or numerical outputs (hdf5 file)
 - `Annotation`: label audio file on a given time or segment
@@ -481,88 +498,164 @@ class: ircam
 #timeside.server
 
 ## RESTful API documentation
-https://sandbox.wasabi.telemeta.org/timeside/api/docs/
+
+auto-generated thanks to ReDoc on top of OpenAPI 👉 👉 https://timeside.ircam.fr/api/docs/
 
 <img src="img/server_doc.png" width="900">
 
 
 ---
 class: ircam
-#timeside.server
+
+# timeside.server - wasabi project
 
 .pull-left[
-## Examples of server use in WASABI Project
 
-### With server
+## workflow examples in the WASABI platform
 
-POC of a webservice delivering audio analysis to another remote server:
-a large database of musical metadata
+### with providers
+
+- Youtube
+    - based on `youtube-dl`
+    - must be adaptable to YouTube's changes
+- Deezer 30 seconds long preview
+    - consuming Deezer's API
+    - find another solution to full contents
 
 ]
 
 
 .pull-right[
-<img src="img/architecture_WASABI.png" width="450">
+<img src="img/Architecture_WASABI-providers.png" width="450">
 <!-- .right[![image-wh-bg](img/architecture_WASABI.png)] -->
 ]
 
 ---
+
 class: ircam
-#timeside.server
+
+# timeside.server - wasabi project
 
 .pull-left[
-## Examples of server use in WASABI Project
 
-### With a frontend player
+## workflow examples in the WASABI platform
 
+### with server
 
+POC of a webservice
+
+- delivers audio analysis to another remote server
+- enhance its musical metadata with results
 
 ]
 
 
 .pull-right[
-<img src="img/architecture_WASABI.png" width="450">
+<img src="img/Architecture_WASABI-server.png" width="450">
 <!-- .right[![image-wh-bg](img/architecture_WASABI.png)] -->
 ]
 
-
 ---
 class: ircam
-#timeside.server
+
+# timeside.server - wasabi project
 
 .pull-left[
-## Examples of server use in WASABI Project
+
+## workflow examples in the WASABI platform
 
 ### Import/export of a run on Deezer's infrastructure
 
-keep audio "at home"
+POC of a sharing system of an audio analysis datasets
 
-
+- easy deployment thanks to docker
+- audio does not have to be shared
 
 ]
 
 
 .pull-right[
-<img src="img/architecture_WASABI.png" width="450">
+<img src="img/Architecture_WASABI-deezer.png" width="450">
 <!-- .right[![image-wh-bg](img/architecture_WASABI.png)] -->
 ]
 
+
+---
+class: ircam
+
+# timeside.server - wasabi project
+
+.pull-left[
+
+## workflow examples in the WASABI platform
+
+### with a frontend player
+
+POC of a JavaScript app that consume the Rest API
+
+- serialize data as JSON or image
+- deliver analysis track (spectrogram, waveform)
+- deliver or get annotations on audio track
+
+
+]
+
+.pull-right[
+<img src="img/Architecture_WASABI-frontend.png" width="450">
+<!-- .right[![image-wh-bg](img/architecture_WASABI.png)] -->
+]
+
+
+
+---
+class: ircam
+
+# timeside.server - wasabi project ([link](https://wasabi.i3s.unice.fr/))
+
+.pic-container[
+    <img src="img/wasabi.i3s.unice.fr-ledzep-2.png" width="100%">
+]
+
+
+---
+class: ircam
+# timeside.server - wasabi project ([link](https://wasabi.i3s.unice.fr/))
+
+.pic-container[
+    <img src="img/wasabi.i3s.unice.fr-ledzep-1.png" width="100%">
+]
+
+
+
+---
+class: ircam
+
+# timeside.server - wasabi project ([link](https://wasabi.i3s.unice.fr/))
+
+<center>
+<img src="img/vis_overview.png" width="80%">
+</center>
+
+.footnote[
+Aline Menin, Michel Buffa, Maroua Tikat, Benjamin Molinet, Guillaume Pellerin, Laurent Pottier, Franck Michel, & Marco Winckler. (2022, June 28). Incremental and multimodal visualization of discographies: exploring the WASABI music knowledge base. Web Audio Conference 2022 (WAC 2022), Cannes, France. https://doi.org/10.5281/zenodo.6767530
+]
 
 ---
 class: ircam, middle, center, inverse
 
-#TimeSide Player
+#timeside.player
 
 
 ---
 
 class: ircam
-#timeside.player
+# timeside.player - v1
+
+## Features
 
 .pull-left-30[
-## v1 (SoundManager2)
-
-- on demand processing
+- full HTML through SoundManager2
+- on demand processing and display
 - simple marker annotation
 - bitmap image cache only
 ]
@@ -571,33 +664,34 @@ class: ircam
 .right[![image](img/SOLO_DUOdetection.png)]
 ]
 
+
 ---
 class: ircam
 
 .pull-left[
-#timeside.player
 
-##v2
+# timeside.player - v2
 
-###Constraints
+## Constraints
 
 - Handling multiple hours audio files
 - Multiple user annotations and analysis tracks
-- Analysis rendered on the frontend
+- Vectorized
 - Zooming
+- Scaling
 ]
 
 .pull-right[
-.right[![image](img/ui-telemeta-grand-2_1.png)]
+.right[![image](img/timeside-player-wac-22.png)]
 ]
 
 
 ---
 class: ircam, tight
 
-#timeside.player
+# timeside.player - v2
 
-##API SDK (client library)
+## API SDK (client library)
 
 .pull-left[
 - Timeside API: 75 routes
@@ -633,26 +727,33 @@ class: ircam, tight
 ]
 
 
-- SDK: https://github.com/Ircam-Web/timeside-sdk-js
-- Node: https://github.com/Ircam-Web/timeside-scripts
+- SDK: https://github.com/Ircam-WAM/timeside-sdk-js
+- Scripts: https://github.com/Ircam-WAM/timeside-scripts
 
 Opportunity: `openapi-generator` also supports Python, C/C++, Ruby, Go, Rust etc...
 
 ---
 class: ircam, tight
 
-#timeside.player
+# timeside.player - v2
 
-##Environment
+## HTML Player
+
+.pull-left[
 
 🔧 Technologies
 - Vue (composition-api): DOM Manipulation, Data reactivity
 - D3 (SVG): Render waveform / Analysis
-- HTML5 Audio
+- HTML5 Audio / Web Audio
 - Web Animations API
+- Websockets
 - Resize Observer
-- Github Action for continuous test & deployment (npm, gh-page)
-- Github: https://github.com/ircam-web/timeside-player
+- GitHub Action for continuous test & deployment (npm, gh-page)
+- https://github.com/Ircam-WAM/timeside-player
+
+]
+
+.pull-right[
 
 🚀 Usage
 - Standalone app
@@ -661,75 +762,164 @@ class: ircam, tight
 	- Vue
 	- HTML
 
-🌐 Tested on Firefox & Chrome
+]
+
+
 
 ---
 class: ircam, middle, center
 
 # Demo time!
 
+
+---
+class: ircam, tight
+
+# timeside - embed player
+
+<br>
+
+<!-- <iframe src="https://ircam-wam.github.io/timeside-player/#/item/9e001ba0-6826-4f13-8679-21b1037c34e3" frameborder="0" style="width: 100%; height: 300px;">
+</iframe>
+ -->
+<img src="img/timeside-player-simple-embed.png" width="100%">
+
+
+
+---
+class: ircam, tight
+
+# timeside - music explorer (AI4Media project)
+
+.pull-left[
+
+<img src="img/music-explorer-frontend-attributes.png" width="450">
+
+]
+
+.pull-right[
+
+<img src="img/music-explorer-frontend-similarity.png" width="450">
+
+]
+
+
+
+
+
+---
+class: ircam, tight
+
+# TimeSide - roadmaps
+
+
+.pull-left[
+
+## 1.0 > 1.1 (2021)
+
+- composition
+  - base image upgrades
+- core
+  - lib upgrades
+  - VampAnalyzer
+  - graphers are back
+- server
+  - upgrade deps
+  - stabilization (worker)
+  - API doc
+- worker
+  - full asynchronous
+  - better YouTube provider handling
+- player
+  - embed design
+  - better annotation editor
+  - listing
+
+]
+
+.pull-right[
+
+## 1.1 > 1.2 (2023)
+
+- core
+  - parameters
+  - switch to poetry (python package manager)
+- server
+  - extended API
+- worker
+  - websocket based monitoring
+  - test Deezer provider at scale
+- player
+  - uploader
+  - better listing
+  - looping
+]
+
+
 ---
 class: ircam, tight
 
 #Perspectives
 
-## Audio processing web service (SaaS)
+## Audio processing and annotation web service (SaaS)
 
-###TODO
+.pull-left[
 
-- Clustering and orchestration (Kubernetes)
-- Implementing Websocket, ServerEvent or Webhook to avoid task status polling
-- Split repositories : core, server, player
-- Documentation, notebooks
-- More tests
+### TODO list
 
-###Use cases
+- vertical scales
+- clustering and orchestration
+- synchronous task status polling
+- more plugins (VAMP host, source separation)
+- test some JS MIR librairies (Essentia.js)
+- easy upload
+- audio cross comparison functions
+- more embed experiences
+- re-use of archives in contemporary music
 
-- MIRchiving (Telemeta 2, CMS embedding, BNF, UNAM, UNESCO)
-- Metadata enhanced streaming services (Spotify, Deezer, SoundCloud, Netflix)
-- Digitization and media packaging services (VectraCom, VDM, Gecko)
+]
 
-###Dual licencing
+.pull-right[
+
+### Dual licencing?
 
 - open source community release of the core framework (AGPL)
-- proprietary (entreprise) release (SATT Lutech / Parisson / IRCAM Amplify)
+- proprietary (entreprise) release with specific plugins
+
+### New partnerships
+
+- IRCAM Amplify
+- BNF ?
+- +CNRS ?
+- LISA ?
+
+]
+
 
 
 ---
 class: center, middle, ircam, inverse
 
-# Merci !
+# Thank you and kudos to all contributors!
 
-##Guillaume Pellerin, Antoine Grandry, Martin Desrumaux - IRCAM, France
+<h2><a href="https//timeside.ircam.fr">timeside.ircam.fr</h2>
 
-<img src="img/wasabi_logo_darkbg.png" height="75px" />
+#### guillaume.pellerin@ircam.fr / @yomguy
 
-###guillaume.pellerin@ircam.fr / @yomguy / @telemeta
+<br>
 
 
----
-class: ircam, tight
-
-#Other TimeSide related projects
-
-- DIADEMS
-- DaCaRyh (Labex) - Steel band history
-  - C4DM : Centre for Digital Music at Queen Mary University (London, UK)
-  - CREM
-  - Parisson
-- NYU / CREM - Arabic rythm analysis
-  - NYU : New York University
-  - CREM
-  - Parisson
-- KAMoulox (ANR) - audio source separation
-    - INRIA
-    - Parisson
-    - http://kamoulox.telemeta.org/
-    - http://kamoulox.telemeta.org/timeside/api/results/
-
+<img src="https://www.ircam.fr/media/uploads/images/logo/logoircam_blanc.png" height="40px" />
+<img src="img/wam_logo_1.png" height="40px" />
+<img src="img/telemeta_logo_wh.png" height="40px" />
+<img src="https://github.com/Parisson/Telemeta-doc/blob/master/Common/img/parisson_logo_4_black_72_600px.png?raw=true" height="40px" />
+<img src="https://upload.wikimedia.org/wikipedia/fr/thumb/8/8e/Centre_national_de_la_recherche_scientifique.svg/1200px-Centre_national_de_la_recherche_scientifique.svg.png" height="40px" />
+<img src="https://www.sorbonne-universite.fr/sites/default/files/media/2019-10/logo_4.svg" height="40px" />
+<img src="https://anr.fr/typo3conf/ext/anr_skin/Resources/Public/assets/img/anr-logo-2021.png" height="40px" />
+<img src="https://www.culture.gouv.fr/var/culture/storage/images/_aliases/reference/7/3/0/4/3164037-1-fre-FR/LogoMCHP.PNG" height="40px" />
 
     </textarea>
-    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
     <script>window.remark || document.write(
   '<script src="js/vendor/remark.min.js"><\/script>'
 )
